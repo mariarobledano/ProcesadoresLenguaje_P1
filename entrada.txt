@@ -1,0 +1,7 @@
+# Comentario de una línea
+'''
+Comentario
+multilínea
+'''
++ - * / exp log sin cos
+10 33.5 0b1010 0xFF34
