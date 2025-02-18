@@ -5,3 +5,11 @@ multilínea
 '''
 + - * / exp log sin cos
 10 33.5 0b1010 0xFF34
+
+
++ 3 4
+* + 3 4 2
+sin 0.5
+log 1
+0b1010
+0xA3
