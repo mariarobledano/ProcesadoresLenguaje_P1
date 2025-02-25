@@ -8,7 +8,7 @@ import ply.lex as lex
 tokens = [
     'ENTERO', 'REAL', 'BINARIO', 'HEXADECIMAL',
     'MAS', 'MENOS', 'MULT', 'DIV',
-    'EXP', 'LOG', 'SIN', 'COS'
+    'EXP', 'LOG', 'SIN', 'COS' , 'INF', 'NAN' , 'MEMORY', 'IGUAL'
 ]
 
 def t_COMMENT_SINGLE(t):
@@ -34,6 +34,23 @@ def t_REAL(t):
 def t_ENTERO(t):
     r'\d+'
     return t
+
+def t_INF(t):
+    r'inf'
+    t.value = float('inf')
+    return t
+
+def t_NAN(t):
+    r'nan'
+    t.value = float('nan')
+    return t
+
+def t_MEMORY(t):
+    r'MEMORY'
+    return t
+
+# Token para el operador de asignación =
+t_IGUAL = r'='
 
 t_MAS = r'\+'
 t_MENOS = r'-'

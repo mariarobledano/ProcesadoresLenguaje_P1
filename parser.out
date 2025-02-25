@@ -15,6 +15,10 @@ Rule 9     expresion -> ENTERO
 Rule 10    expresion -> REAL
 Rule 11    expresion -> BINARIO
 Rule 12    expresion -> HEXADECIMAL
+Rule 13    expresion -> INF
+Rule 14    expresion -> NAN
+Rule 15    expresion -> MEMORY IGUAL expresion
+Rule 16    expresion -> MEMORY
 
 Terminals, with rules where they appear
 
@@ -24,17 +28,21 @@ DIV                  : 4
 ENTERO               : 9
 EXP                  : 5
 HEXADECIMAL          : 12
+IGUAL                : 15
+INF                  : 13
 LOG                  : 6
 MAS                  : 1
+MEMORY               : 15 16
 MENOS                : 2
 MULT                 : 3
+NAN                  : 14
 REAL                 : 10
 SIN                  : 7
 error                : 
 
 Nonterminals, with rules where they appear
 
-expresion            : 1 1 2 2 3 3 4 4 5 6 7 8 0
+expresion            : 1 1 2 2 3 3 4 4 5 6 7 8 15 0
 
 Parsing method: LALR
 
@@ -53,6 +61,10 @@ state 0
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -66,6 +78,9 @@ state 0
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
     expresion                      shift and go to state 1
 
@@ -90,6 +105,10 @@ state 2
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -103,8 +122,11 @@ state 2
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 14
+    expresion                      shift and go to state 17
 
 state 3
 
@@ -121,6 +143,10 @@ state 3
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -134,8 +160,11 @@ state 3
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 15
+    expresion                      shift and go to state 18
 
 state 4
 
@@ -152,6 +181,10 @@ state 4
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -165,8 +198,11 @@ state 4
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 16
+    expresion                      shift and go to state 19
 
 state 5
 
@@ -183,6 +219,10 @@ state 5
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -196,8 +236,11 @@ state 5
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 17
+    expresion                      shift and go to state 20
 
 state 6
 
@@ -214,6 +257,10 @@ state 6
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -227,8 +274,11 @@ state 6
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 18
+    expresion                      shift and go to state 21
 
 state 7
 
@@ -245,6 +295,10 @@ state 7
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -258,8 +312,11 @@ state 7
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 19
+    expresion                      shift and go to state 22
 
 state 8
 
@@ -276,6 +333,10 @@ state 8
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -289,8 +350,11 @@ state 8
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 20
+    expresion                      shift and go to state 23
 
 state 9
 
@@ -307,6 +371,10 @@ state 9
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -320,8 +388,11 @@ state 9
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 21
+    expresion                      shift and go to state 24
 
 state 10
 
@@ -340,6 +411,9 @@ state 10
     REAL            reduce using rule 9 (expresion -> ENTERO .)
     BINARIO         reduce using rule 9 (expresion -> ENTERO .)
     HEXADECIMAL     reduce using rule 9 (expresion -> ENTERO .)
+    INF             reduce using rule 9 (expresion -> ENTERO .)
+    NAN             reduce using rule 9 (expresion -> ENTERO .)
+    MEMORY          reduce using rule 9 (expresion -> ENTERO .)
 
 
 state 11
@@ -359,6 +433,9 @@ state 11
     REAL            reduce using rule 10 (expresion -> REAL .)
     BINARIO         reduce using rule 10 (expresion -> REAL .)
     HEXADECIMAL     reduce using rule 10 (expresion -> REAL .)
+    INF             reduce using rule 10 (expresion -> REAL .)
+    NAN             reduce using rule 10 (expresion -> REAL .)
+    MEMORY          reduce using rule 10 (expresion -> REAL .)
 
 
 state 12
@@ -378,6 +455,9 @@ state 12
     REAL            reduce using rule 11 (expresion -> BINARIO .)
     BINARIO         reduce using rule 11 (expresion -> BINARIO .)
     HEXADECIMAL     reduce using rule 11 (expresion -> BINARIO .)
+    INF             reduce using rule 11 (expresion -> BINARIO .)
+    NAN             reduce using rule 11 (expresion -> BINARIO .)
+    MEMORY          reduce using rule 11 (expresion -> BINARIO .)
 
 
 state 13
@@ -397,9 +477,80 @@ state 13
     REAL            reduce using rule 12 (expresion -> HEXADECIMAL .)
     BINARIO         reduce using rule 12 (expresion -> HEXADECIMAL .)
     HEXADECIMAL     reduce using rule 12 (expresion -> HEXADECIMAL .)
+    INF             reduce using rule 12 (expresion -> HEXADECIMAL .)
+    NAN             reduce using rule 12 (expresion -> HEXADECIMAL .)
+    MEMORY          reduce using rule 12 (expresion -> HEXADECIMAL .)
 
 
 state 14
+
+    (13) expresion -> INF .
+
+    $end            reduce using rule 13 (expresion -> INF .)
+    MAS             reduce using rule 13 (expresion -> INF .)
+    MENOS           reduce using rule 13 (expresion -> INF .)
+    MULT            reduce using rule 13 (expresion -> INF .)
+    DIV             reduce using rule 13 (expresion -> INF .)
+    EXP             reduce using rule 13 (expresion -> INF .)
+    LOG             reduce using rule 13 (expresion -> INF .)
+    SIN             reduce using rule 13 (expresion -> INF .)
+    COS             reduce using rule 13 (expresion -> INF .)
+    ENTERO          reduce using rule 13 (expresion -> INF .)
+    REAL            reduce using rule 13 (expresion -> INF .)
+    BINARIO         reduce using rule 13 (expresion -> INF .)
+    HEXADECIMAL     reduce using rule 13 (expresion -> INF .)
+    INF             reduce using rule 13 (expresion -> INF .)
+    NAN             reduce using rule 13 (expresion -> INF .)
+    MEMORY          reduce using rule 13 (expresion -> INF .)
+
+
+state 15
+
+    (14) expresion -> NAN .
+
+    $end            reduce using rule 14 (expresion -> NAN .)
+    MAS             reduce using rule 14 (expresion -> NAN .)
+    MENOS           reduce using rule 14 (expresion -> NAN .)
+    MULT            reduce using rule 14 (expresion -> NAN .)
+    DIV             reduce using rule 14 (expresion -> NAN .)
+    EXP             reduce using rule 14 (expresion -> NAN .)
+    LOG             reduce using rule 14 (expresion -> NAN .)
+    SIN             reduce using rule 14 (expresion -> NAN .)
+    COS             reduce using rule 14 (expresion -> NAN .)
+    ENTERO          reduce using rule 14 (expresion -> NAN .)
+    REAL            reduce using rule 14 (expresion -> NAN .)
+    BINARIO         reduce using rule 14 (expresion -> NAN .)
+    HEXADECIMAL     reduce using rule 14 (expresion -> NAN .)
+    INF             reduce using rule 14 (expresion -> NAN .)
+    NAN             reduce using rule 14 (expresion -> NAN .)
+    MEMORY          reduce using rule 14 (expresion -> NAN .)
+
+
+state 16
+
+    (15) expresion -> MEMORY . IGUAL expresion
+    (16) expresion -> MEMORY .
+
+    IGUAL           shift and go to state 25
+    $end            reduce using rule 16 (expresion -> MEMORY .)
+    MAS             reduce using rule 16 (expresion -> MEMORY .)
+    MENOS           reduce using rule 16 (expresion -> MEMORY .)
+    MULT            reduce using rule 16 (expresion -> MEMORY .)
+    DIV             reduce using rule 16 (expresion -> MEMORY .)
+    EXP             reduce using rule 16 (expresion -> MEMORY .)
+    LOG             reduce using rule 16 (expresion -> MEMORY .)
+    SIN             reduce using rule 16 (expresion -> MEMORY .)
+    COS             reduce using rule 16 (expresion -> MEMORY .)
+    ENTERO          reduce using rule 16 (expresion -> MEMORY .)
+    REAL            reduce using rule 16 (expresion -> MEMORY .)
+    BINARIO         reduce using rule 16 (expresion -> MEMORY .)
+    HEXADECIMAL     reduce using rule 16 (expresion -> MEMORY .)
+    INF             reduce using rule 16 (expresion -> MEMORY .)
+    NAN             reduce using rule 16 (expresion -> MEMORY .)
+    MEMORY          reduce using rule 16 (expresion -> MEMORY .)
+
+
+state 17
 
     (1) expresion -> MAS expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -414,6 +565,10 @@ state 14
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -427,10 +582,13 @@ state 14
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 22
+    expresion                      shift and go to state 26
 
-state 15
+state 18
 
     (2) expresion -> MENOS expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -445,6 +603,10 @@ state 15
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -458,10 +620,13 @@ state 15
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 23
+    expresion                      shift and go to state 27
 
-state 16
+state 19
 
     (3) expresion -> MULT expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -476,6 +641,10 @@ state 16
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -489,10 +658,13 @@ state 16
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 24
+    expresion                      shift and go to state 28
 
-state 17
+state 20
 
     (4) expresion -> DIV expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -507,6 +679,10 @@ state 17
     (10) expresion -> . REAL
     (11) expresion -> . BINARIO
     (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -520,10 +696,13 @@ state 17
     REAL            shift and go to state 11
     BINARIO         shift and go to state 12
     HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
 
-    expresion                      shift and go to state 25
+    expresion                      shift and go to state 29
 
-state 18
+state 21
 
     (5) expresion -> EXP expresion .
 
@@ -540,9 +719,12 @@ state 18
     REAL            reduce using rule 5 (expresion -> EXP expresion .)
     BINARIO         reduce using rule 5 (expresion -> EXP expresion .)
     HEXADECIMAL     reduce using rule 5 (expresion -> EXP expresion .)
+    INF             reduce using rule 5 (expresion -> EXP expresion .)
+    NAN             reduce using rule 5 (expresion -> EXP expresion .)
+    MEMORY          reduce using rule 5 (expresion -> EXP expresion .)
 
 
-state 19
+state 22
 
     (6) expresion -> LOG expresion .
 
@@ -559,9 +741,12 @@ state 19
     REAL            reduce using rule 6 (expresion -> LOG expresion .)
     BINARIO         reduce using rule 6 (expresion -> LOG expresion .)
     HEXADECIMAL     reduce using rule 6 (expresion -> LOG expresion .)
+    INF             reduce using rule 6 (expresion -> LOG expresion .)
+    NAN             reduce using rule 6 (expresion -> LOG expresion .)
+    MEMORY          reduce using rule 6 (expresion -> LOG expresion .)
 
 
-state 20
+state 23
 
     (7) expresion -> SIN expresion .
 
@@ -578,9 +763,12 @@ state 20
     REAL            reduce using rule 7 (expresion -> SIN expresion .)
     BINARIO         reduce using rule 7 (expresion -> SIN expresion .)
     HEXADECIMAL     reduce using rule 7 (expresion -> SIN expresion .)
+    INF             reduce using rule 7 (expresion -> SIN expresion .)
+    NAN             reduce using rule 7 (expresion -> SIN expresion .)
+    MEMORY          reduce using rule 7 (expresion -> SIN expresion .)
 
 
-state 21
+state 24
 
     (8) expresion -> COS expresion .
 
@@ -597,9 +785,50 @@ state 21
     REAL            reduce using rule 8 (expresion -> COS expresion .)
     BINARIO         reduce using rule 8 (expresion -> COS expresion .)
     HEXADECIMAL     reduce using rule 8 (expresion -> COS expresion .)
+    INF             reduce using rule 8 (expresion -> COS expresion .)
+    NAN             reduce using rule 8 (expresion -> COS expresion .)
+    MEMORY          reduce using rule 8 (expresion -> COS expresion .)
 
 
-state 22
+state 25
+
+    (15) expresion -> MEMORY IGUAL . expresion
+    (1) expresion -> . MAS expresion expresion
+    (2) expresion -> . MENOS expresion expresion
+    (3) expresion -> . MULT expresion expresion
+    (4) expresion -> . DIV expresion expresion
+    (5) expresion -> . EXP expresion
+    (6) expresion -> . LOG expresion
+    (7) expresion -> . SIN expresion
+    (8) expresion -> . COS expresion
+    (9) expresion -> . ENTERO
+    (10) expresion -> . REAL
+    (11) expresion -> . BINARIO
+    (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
+
+    MAS             shift and go to state 2
+    MENOS           shift and go to state 3
+    MULT            shift and go to state 4
+    DIV             shift and go to state 5
+    EXP             shift and go to state 6
+    LOG             shift and go to state 7
+    SIN             shift and go to state 8
+    COS             shift and go to state 9
+    ENTERO          shift and go to state 10
+    REAL            shift and go to state 11
+    BINARIO         shift and go to state 12
+    HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
+
+    expresion                      shift and go to state 30
+
+state 26
 
     (1) expresion -> MAS expresion expresion .
 
@@ -616,9 +845,12 @@ state 22
     REAL            reduce using rule 1 (expresion -> MAS expresion expresion .)
     BINARIO         reduce using rule 1 (expresion -> MAS expresion expresion .)
     HEXADECIMAL     reduce using rule 1 (expresion -> MAS expresion expresion .)
+    INF             reduce using rule 1 (expresion -> MAS expresion expresion .)
+    NAN             reduce using rule 1 (expresion -> MAS expresion expresion .)
+    MEMORY          reduce using rule 1 (expresion -> MAS expresion expresion .)
 
 
-state 23
+state 27
 
     (2) expresion -> MENOS expresion expresion .
 
@@ -635,9 +867,12 @@ state 23
     REAL            reduce using rule 2 (expresion -> MENOS expresion expresion .)
     BINARIO         reduce using rule 2 (expresion -> MENOS expresion expresion .)
     HEXADECIMAL     reduce using rule 2 (expresion -> MENOS expresion expresion .)
+    INF             reduce using rule 2 (expresion -> MENOS expresion expresion .)
+    NAN             reduce using rule 2 (expresion -> MENOS expresion expresion .)
+    MEMORY          reduce using rule 2 (expresion -> MENOS expresion expresion .)
 
 
-state 24
+state 28
 
     (3) expresion -> MULT expresion expresion .
 
@@ -654,9 +889,12 @@ state 24
     REAL            reduce using rule 3 (expresion -> MULT expresion expresion .)
     BINARIO         reduce using rule 3 (expresion -> MULT expresion expresion .)
     HEXADECIMAL     reduce using rule 3 (expresion -> MULT expresion expresion .)
+    INF             reduce using rule 3 (expresion -> MULT expresion expresion .)
+    NAN             reduce using rule 3 (expresion -> MULT expresion expresion .)
+    MEMORY          reduce using rule 3 (expresion -> MULT expresion expresion .)
 
 
-state 25
+state 29
 
     (4) expresion -> DIV expresion expresion .
 
@@ -673,4 +911,29 @@ state 25
     REAL            reduce using rule 4 (expresion -> DIV expresion expresion .)
     BINARIO         reduce using rule 4 (expresion -> DIV expresion expresion .)
     HEXADECIMAL     reduce using rule 4 (expresion -> DIV expresion expresion .)
+    INF             reduce using rule 4 (expresion -> DIV expresion expresion .)
+    NAN             reduce using rule 4 (expresion -> DIV expresion expresion .)
+    MEMORY          reduce using rule 4 (expresion -> DIV expresion expresion .)
+
+
+state 30
+
+    (15) expresion -> MEMORY IGUAL expresion .
+
+    $end            reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    MAS             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    MENOS           reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    MULT            reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    DIV             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    EXP             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    LOG             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    SIN             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    COS             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    ENTERO          reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    REAL            reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    BINARIO         reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    HEXADECIMAL     reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    INF             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    NAN             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    MEMORY          reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
 

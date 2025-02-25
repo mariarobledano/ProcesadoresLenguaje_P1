@@ -56,6 +56,24 @@ def p_error(p):
     else:
         print("Error de sintaxis: fin de entrada inesperado")
 
+def p_expresion_inf_nan(p):
+    '''expresion : INF
+                 | NAN'''
+    p[0] = p[1]
+
+memory = 0  # Inicialmente MEMORY vale 0
+
+def p_asignacion_memory(p):
+    'expresion : MEMORY IGUAL expresion'
+    global memory
+    memory = p[3]  # Guardamos el valor en MEMORY
+    p[0] = memory  # Devolvemos el valor
+
+def p_expresion_memory(p):
+    'expresion : MEMORY'
+    global memory
+    p[0] = memory  # Usamos el valor almacenado
+    
 # Constructor del parser
 def construir_parser():
     return yacc.yacc()
