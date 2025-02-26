@@ -1,15 +1,36 @@
-# Comentario de una línea
+# 🔹 PRUEBAS DE COMENTARIOS
+# Este es un comentario de una línea
 '''
-Comentario
-multilínea
+Este es un comentario
+de múltiples líneas
+No debe afectar el análisis
 '''
-+ - * / exp log sin cos
-10 33.5 0b1010 0xFF34
 
+# 🔹 PRUEBAS DE OPERADORES Y FUNCIONES
++ 8 2          # Suma: 8 + 2 = 10
+- 20 5         # Resta: 20 - 5 = 15
+* 3 4          # Multiplicación: 3 * 4 = 12
+/ 10 2         # División: 10 / 2 = 5
+sin 0          # sin(0) = 0
+cos 0          # cos(0) = 1
+log 1          # log(1) = 0
+exp 2          # exp(2) = e^2
 
-+ 3 4
-* + 3 4 2
-sin 0.5
-log 1
-0b1010
-0xA3
+# 🔹 PRUEBAS DE NÚMEROS
+10             # Entero simple
+33.5           # Número real
+0b1010         # Binario → 10 en decimal
+0xFF34         # Hexadecimal → 65332 en decimal
+inf            # Infinito positivo
++ inf 10       # inf + 10 → inf
+log nan        # log(nan) → nan
+
+# 🔹 PRUEBAS DE MEMORY
+MEMORY = + 100 50   # MEMORY almacena 150
+MEMORY              # Verificar que MEMORY es 150
+MEMORY = - MEMORY 20  # MEMORY ahora es 130
+MEMORY              # Verificar que MEMORY es 130
+* MEMORY 2         # 130 * 2 → 260
+MEMORY = / MEMORY 2 # 130 / 2 → 65
+MEMORY              # Verificar que MEMORY es 65
+

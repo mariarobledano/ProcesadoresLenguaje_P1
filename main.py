@@ -1,35 +1,25 @@
+import re
 from scanner import construir_scanner
 from parser import construir_parser
 
 lexer = construir_scanner()
 parser = construir_parser()
 
-# Ejemplo de entrada en notación polaca (prefija)
-entrada = """
-+ 3 4
-* + 3 4 2
-sin 0.5
-log 1
-0b1010
-0xA3
-"""
 
-lexer.input(entrada)
+with open("entrada.txt", "r") as f:
+    entrada = f.read()
 
-tokens = []
-for tok in lexer:
-    tokens.append(tok)
+entrada = re.sub(r"'''[\s\S]*?'''", "", entrada) 
 
-# Procesar línea por línea con contador
-lineas = entrada.splitlines()
+lineas = entrada.strip().split("\n")
 contador_linea = 1
 
 for linea in lineas:
-    if linea.strip():  # Evitar líneas vacías
+    linea = re.sub(r'\#.*', '', linea).strip()  
+    if linea and not linea.isspace():  
         resultado = parser.parse(linea, lexer=lexer)
         if resultado is not None:
-            # Mostrar enteros sin decimales
-            if resultado.is_integer():
+            if isinstance(resultado, float) and resultado.is_integer():
                 resultado = int(resultado)
-            print(f"Resultado '{linea.strip()}' [Línea {contador_linea}]: {resultado}")
+            print(f"Resultado '{linea}' [Línea {contador_linea}]: {resultado}")
     contador_linea += 1

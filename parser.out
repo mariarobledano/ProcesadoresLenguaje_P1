@@ -19,6 +19,7 @@ Rule 13    expresion -> INF
 Rule 14    expresion -> NAN
 Rule 15    expresion -> MEMORY IGUAL expresion
 Rule 16    expresion -> MEMORY
+Rule 17    expresion -> NEG expresion
 
 Terminals, with rules where they appear
 
@@ -36,13 +37,14 @@ MEMORY               : 15 16
 MENOS                : 2
 MULT                 : 3
 NAN                  : 14
+NEG                  : 17
 REAL                 : 10
 SIN                  : 7
 error                : 
 
 Nonterminals, with rules where they appear
 
-expresion            : 1 1 2 2 3 3 4 4 5 6 7 8 15 0
+expresion            : 1 1 2 2 3 3 4 4 5 6 7 8 15 17 0
 
 Parsing method: LALR
 
@@ -65,6 +67,7 @@ state 0
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -81,6 +84,7 @@ state 0
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
     expresion                      shift and go to state 1
 
@@ -109,6 +113,7 @@ state 2
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -125,8 +130,9 @@ state 2
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 17
+    expresion                      shift and go to state 18
 
 state 3
 
@@ -147,6 +153,7 @@ state 3
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -163,8 +170,9 @@ state 3
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 18
+    expresion                      shift and go to state 19
 
 state 4
 
@@ -185,6 +193,7 @@ state 4
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -201,8 +210,9 @@ state 4
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 19
+    expresion                      shift and go to state 20
 
 state 5
 
@@ -223,6 +233,7 @@ state 5
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -239,8 +250,9 @@ state 5
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 20
+    expresion                      shift and go to state 21
 
 state 6
 
@@ -261,6 +273,7 @@ state 6
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -277,8 +290,9 @@ state 6
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 21
+    expresion                      shift and go to state 22
 
 state 7
 
@@ -299,6 +313,7 @@ state 7
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -315,8 +330,9 @@ state 7
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 22
+    expresion                      shift and go to state 23
 
 state 8
 
@@ -337,6 +353,7 @@ state 8
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -353,8 +370,9 @@ state 8
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 23
+    expresion                      shift and go to state 24
 
 state 9
 
@@ -375,6 +393,7 @@ state 9
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -391,8 +410,9 @@ state 9
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 24
+    expresion                      shift and go to state 25
 
 state 10
 
@@ -414,6 +434,7 @@ state 10
     INF             reduce using rule 9 (expresion -> ENTERO .)
     NAN             reduce using rule 9 (expresion -> ENTERO .)
     MEMORY          reduce using rule 9 (expresion -> ENTERO .)
+    NEG             reduce using rule 9 (expresion -> ENTERO .)
 
 
 state 11
@@ -436,6 +457,7 @@ state 11
     INF             reduce using rule 10 (expresion -> REAL .)
     NAN             reduce using rule 10 (expresion -> REAL .)
     MEMORY          reduce using rule 10 (expresion -> REAL .)
+    NEG             reduce using rule 10 (expresion -> REAL .)
 
 
 state 12
@@ -458,6 +480,7 @@ state 12
     INF             reduce using rule 11 (expresion -> BINARIO .)
     NAN             reduce using rule 11 (expresion -> BINARIO .)
     MEMORY          reduce using rule 11 (expresion -> BINARIO .)
+    NEG             reduce using rule 11 (expresion -> BINARIO .)
 
 
 state 13
@@ -480,6 +503,7 @@ state 13
     INF             reduce using rule 12 (expresion -> HEXADECIMAL .)
     NAN             reduce using rule 12 (expresion -> HEXADECIMAL .)
     MEMORY          reduce using rule 12 (expresion -> HEXADECIMAL .)
+    NEG             reduce using rule 12 (expresion -> HEXADECIMAL .)
 
 
 state 14
@@ -502,6 +526,7 @@ state 14
     INF             reduce using rule 13 (expresion -> INF .)
     NAN             reduce using rule 13 (expresion -> INF .)
     MEMORY          reduce using rule 13 (expresion -> INF .)
+    NEG             reduce using rule 13 (expresion -> INF .)
 
 
 state 15
@@ -524,6 +549,7 @@ state 15
     INF             reduce using rule 14 (expresion -> NAN .)
     NAN             reduce using rule 14 (expresion -> NAN .)
     MEMORY          reduce using rule 14 (expresion -> NAN .)
+    NEG             reduce using rule 14 (expresion -> NAN .)
 
 
 state 16
@@ -531,7 +557,7 @@ state 16
     (15) expresion -> MEMORY . IGUAL expresion
     (16) expresion -> MEMORY .
 
-    IGUAL           shift and go to state 25
+    IGUAL           shift and go to state 26
     $end            reduce using rule 16 (expresion -> MEMORY .)
     MAS             reduce using rule 16 (expresion -> MEMORY .)
     MENOS           reduce using rule 16 (expresion -> MEMORY .)
@@ -548,9 +574,50 @@ state 16
     INF             reduce using rule 16 (expresion -> MEMORY .)
     NAN             reduce using rule 16 (expresion -> MEMORY .)
     MEMORY          reduce using rule 16 (expresion -> MEMORY .)
+    NEG             reduce using rule 16 (expresion -> MEMORY .)
 
 
 state 17
+
+    (17) expresion -> NEG . expresion
+    (1) expresion -> . MAS expresion expresion
+    (2) expresion -> . MENOS expresion expresion
+    (3) expresion -> . MULT expresion expresion
+    (4) expresion -> . DIV expresion expresion
+    (5) expresion -> . EXP expresion
+    (6) expresion -> . LOG expresion
+    (7) expresion -> . SIN expresion
+    (8) expresion -> . COS expresion
+    (9) expresion -> . ENTERO
+    (10) expresion -> . REAL
+    (11) expresion -> . BINARIO
+    (12) expresion -> . HEXADECIMAL
+    (13) expresion -> . INF
+    (14) expresion -> . NAN
+    (15) expresion -> . MEMORY IGUAL expresion
+    (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
+
+    MAS             shift and go to state 2
+    MENOS           shift and go to state 3
+    MULT            shift and go to state 4
+    DIV             shift and go to state 5
+    EXP             shift and go to state 6
+    LOG             shift and go to state 7
+    SIN             shift and go to state 8
+    COS             shift and go to state 9
+    ENTERO          shift and go to state 10
+    REAL            shift and go to state 11
+    BINARIO         shift and go to state 12
+    HEXADECIMAL     shift and go to state 13
+    INF             shift and go to state 14
+    NAN             shift and go to state 15
+    MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
+
+    expresion                      shift and go to state 27
+
+state 18
 
     (1) expresion -> MAS expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -569,6 +636,7 @@ state 17
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -585,10 +653,11 @@ state 17
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 26
+    expresion                      shift and go to state 28
 
-state 18
+state 19
 
     (2) expresion -> MENOS expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -607,6 +676,7 @@ state 18
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -623,10 +693,11 @@ state 18
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 27
+    expresion                      shift and go to state 29
 
-state 19
+state 20
 
     (3) expresion -> MULT expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -645,6 +716,7 @@ state 19
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -661,10 +733,11 @@ state 19
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 28
+    expresion                      shift and go to state 30
 
-state 20
+state 21
 
     (4) expresion -> DIV expresion . expresion
     (1) expresion -> . MAS expresion expresion
@@ -683,6 +756,7 @@ state 20
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -699,10 +773,11 @@ state 20
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 29
+    expresion                      shift and go to state 31
 
-state 21
+state 22
 
     (5) expresion -> EXP expresion .
 
@@ -722,9 +797,10 @@ state 21
     INF             reduce using rule 5 (expresion -> EXP expresion .)
     NAN             reduce using rule 5 (expresion -> EXP expresion .)
     MEMORY          reduce using rule 5 (expresion -> EXP expresion .)
+    NEG             reduce using rule 5 (expresion -> EXP expresion .)
 
 
-state 22
+state 23
 
     (6) expresion -> LOG expresion .
 
@@ -744,9 +820,10 @@ state 22
     INF             reduce using rule 6 (expresion -> LOG expresion .)
     NAN             reduce using rule 6 (expresion -> LOG expresion .)
     MEMORY          reduce using rule 6 (expresion -> LOG expresion .)
+    NEG             reduce using rule 6 (expresion -> LOG expresion .)
 
 
-state 23
+state 24
 
     (7) expresion -> SIN expresion .
 
@@ -766,9 +843,10 @@ state 23
     INF             reduce using rule 7 (expresion -> SIN expresion .)
     NAN             reduce using rule 7 (expresion -> SIN expresion .)
     MEMORY          reduce using rule 7 (expresion -> SIN expresion .)
+    NEG             reduce using rule 7 (expresion -> SIN expresion .)
 
 
-state 24
+state 25
 
     (8) expresion -> COS expresion .
 
@@ -788,9 +866,10 @@ state 24
     INF             reduce using rule 8 (expresion -> COS expresion .)
     NAN             reduce using rule 8 (expresion -> COS expresion .)
     MEMORY          reduce using rule 8 (expresion -> COS expresion .)
+    NEG             reduce using rule 8 (expresion -> COS expresion .)
 
 
-state 25
+state 26
 
     (15) expresion -> MEMORY IGUAL . expresion
     (1) expresion -> . MAS expresion expresion
@@ -809,6 +888,7 @@ state 25
     (14) expresion -> . NAN
     (15) expresion -> . MEMORY IGUAL expresion
     (16) expresion -> . MEMORY
+    (17) expresion -> . NEG expresion
 
     MAS             shift and go to state 2
     MENOS           shift and go to state 3
@@ -825,10 +905,34 @@ state 25
     INF             shift and go to state 14
     NAN             shift and go to state 15
     MEMORY          shift and go to state 16
+    NEG             shift and go to state 17
 
-    expresion                      shift and go to state 30
+    expresion                      shift and go to state 32
 
-state 26
+state 27
+
+    (17) expresion -> NEG expresion .
+
+    $end            reduce using rule 17 (expresion -> NEG expresion .)
+    MAS             reduce using rule 17 (expresion -> NEG expresion .)
+    MENOS           reduce using rule 17 (expresion -> NEG expresion .)
+    MULT            reduce using rule 17 (expresion -> NEG expresion .)
+    DIV             reduce using rule 17 (expresion -> NEG expresion .)
+    EXP             reduce using rule 17 (expresion -> NEG expresion .)
+    LOG             reduce using rule 17 (expresion -> NEG expresion .)
+    SIN             reduce using rule 17 (expresion -> NEG expresion .)
+    COS             reduce using rule 17 (expresion -> NEG expresion .)
+    ENTERO          reduce using rule 17 (expresion -> NEG expresion .)
+    REAL            reduce using rule 17 (expresion -> NEG expresion .)
+    BINARIO         reduce using rule 17 (expresion -> NEG expresion .)
+    HEXADECIMAL     reduce using rule 17 (expresion -> NEG expresion .)
+    INF             reduce using rule 17 (expresion -> NEG expresion .)
+    NAN             reduce using rule 17 (expresion -> NEG expresion .)
+    MEMORY          reduce using rule 17 (expresion -> NEG expresion .)
+    NEG             reduce using rule 17 (expresion -> NEG expresion .)
+
+
+state 28
 
     (1) expresion -> MAS expresion expresion .
 
@@ -848,9 +952,10 @@ state 26
     INF             reduce using rule 1 (expresion -> MAS expresion expresion .)
     NAN             reduce using rule 1 (expresion -> MAS expresion expresion .)
     MEMORY          reduce using rule 1 (expresion -> MAS expresion expresion .)
+    NEG             reduce using rule 1 (expresion -> MAS expresion expresion .)
 
 
-state 27
+state 29
 
     (2) expresion -> MENOS expresion expresion .
 
@@ -870,9 +975,10 @@ state 27
     INF             reduce using rule 2 (expresion -> MENOS expresion expresion .)
     NAN             reduce using rule 2 (expresion -> MENOS expresion expresion .)
     MEMORY          reduce using rule 2 (expresion -> MENOS expresion expresion .)
+    NEG             reduce using rule 2 (expresion -> MENOS expresion expresion .)
 
 
-state 28
+state 30
 
     (3) expresion -> MULT expresion expresion .
 
@@ -892,9 +998,10 @@ state 28
     INF             reduce using rule 3 (expresion -> MULT expresion expresion .)
     NAN             reduce using rule 3 (expresion -> MULT expresion expresion .)
     MEMORY          reduce using rule 3 (expresion -> MULT expresion expresion .)
+    NEG             reduce using rule 3 (expresion -> MULT expresion expresion .)
 
 
-state 29
+state 31
 
     (4) expresion -> DIV expresion expresion .
 
@@ -914,9 +1021,10 @@ state 29
     INF             reduce using rule 4 (expresion -> DIV expresion expresion .)
     NAN             reduce using rule 4 (expresion -> DIV expresion expresion .)
     MEMORY          reduce using rule 4 (expresion -> DIV expresion expresion .)
+    NEG             reduce using rule 4 (expresion -> DIV expresion expresion .)
 
 
-state 30
+state 32
 
     (15) expresion -> MEMORY IGUAL expresion .
 
@@ -936,4 +1044,5 @@ state 30
     INF             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
     NAN             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
     MEMORY          reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
+    NEG             reduce using rule 15 (expresion -> MEMORY IGUAL expresion .)
 
