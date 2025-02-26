@@ -1,3 +1,17 @@
+"""
+PROGRAMA PRINCIPAL
+
+Este fichero ejecuta el lexer y el parser, procesando el contenido de `entrada.txt`.
+Elimina comentarios antes de enviarlos al lexer para evitar errores.
+
+Funcionalidades:
+- Lee la entrada desde `entrada.txt`.
+- Elimina comentarios antes del análisis.
+- Procesa cada línea y muestra los resultados en la consola.
+
+"""
+
+
 import re
 from scanner import construir_scanner
 from parser import construir_parser

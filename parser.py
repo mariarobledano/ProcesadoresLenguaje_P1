@@ -1,3 +1,20 @@
+"""
+PARSER (ANALIZADOR SINTÁCTICO)
+
+Este fichero contiene el analizador sintáctico del programa.
+Su función es interpretar los tokens generados por el lexer y evaluar expresiones matemáticas.
+
+Funcionalidades:
+- Maneja operaciones matemáticas en notación polaca (prefija).
+- Implementa reglas gramaticales para operadores y funciones.
+- Procesa números y valores especiales (inf, nan).
+- Implementa la memoria (`MEMORY`) como una variable almacenable.
+- Detecta errores de sintaxis.
+
+"""
+
+
+
 import ply.yacc as yacc
 from scanner import tokens
 import math
@@ -46,21 +63,14 @@ def p_expresion_numero(p):
                  | REAL'''
     p[0] = float(p[1]) 
 
-def p_expresion_binario(p):
-    'expresion : BINARIO'
-    p[0] = p[1]
-
-def p_expresion_hexadecimal(p):
-    'expresion : HEXADECIMAL'
-    p[0] = p[1] 
-
-# Manejo de infinito y nan
-def p_expresion_inf_nan(p):
-    '''expresion : INF
+def p_expresion_valores_especiales(p):
+    '''expresion : BINARIO
+                 | HEXADECIMAL
+                 | INF
                  | NAN'''
     p[0] = p[1]
 
-# Manejo de MEMORY
+
 def p_asignacion_memory(p):
     'expresion : MEMORY IGUAL expresion'
     global memory
@@ -72,18 +82,15 @@ def p_expresion_memory(p):
     global memory
     p[0] = memory  
 
-# Manejo de números negativos (operador unario NEG)
 def p_expresion_negativa(p):
     'expresion : NEG expresion'
     p[0] = -p[2]
 
-# Manejo de errores
 def p_error(p):
     if p:
         print(f"Error de sintaxis en '{p.value}'")
     else:
         print("Error de sintaxis: fin de entrada inesperado")
 
-# Construir el parser
 def construir_parser():
     return yacc.yacc()
