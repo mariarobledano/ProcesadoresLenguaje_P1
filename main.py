@@ -11,9 +11,8 @@ Funcionalidades:
 
 """
 
-
 import re
-from scanner import construir_scanner
+from lexer import construir_scanner
 from parser import construir_parser
 
 lexer = construir_scanner()

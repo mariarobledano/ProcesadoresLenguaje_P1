@@ -1,5 +1,5 @@
 """
-SCANNER (LEXER)
+LEXER
 
 Este fichero contiene el analizador léxico (lexer) del programa.
 Su función es dividir la entrada en tokens y filtrar elementos no deseados como comentarios.
@@ -13,7 +13,6 @@ Funcionalidades:
 - Ignora comentarios de una línea y multilínea.
 
 """
-
 
 import ply.lex as lex
 

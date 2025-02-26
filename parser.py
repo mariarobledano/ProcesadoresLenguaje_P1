@@ -13,22 +13,17 @@ Funcionalidades:
 
 """
 
-
-
 import ply.yacc as yacc
-from scanner import tokens
+from lexer import tokens
 import math
 
-# Reglas de precedencia (para operaciones)
 precedence = (
     ('left', 'MAS', 'MENOS'),
     ('left', 'MULT', 'DIV'),
 )
 
-# Variable global de memoria
 memory = 0  
 
-# Definir operaciones matemáticas en notación polaca
 def p_expresion_operacion(p):
     '''expresion : MAS expresion expresion
                  | MENOS expresion expresion
