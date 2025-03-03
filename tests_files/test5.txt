@@ -1,0 +1,9 @@
+# Esto es un comentario
++ 2 3 # Operación suma
+MEMORY = 5
+sin MEMORY
+# Logaritmo de un número
+log MEMORY
+/ MEMORY 0
+MEMORY = * 2 3 # Asignación con operación
++ MEMORY 4
